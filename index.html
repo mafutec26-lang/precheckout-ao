@@ -1,0 +1,993 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Receita de Vitalidade</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f7f4;
+      color: #17221a;
+    }
+
+    .page {
+      min-height: 100svh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 8px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 430px;
+      background: #fff;
+      border-radius: 18px;
+      padding: 14px 14px 10px;
+      box-shadow: 0 6px 25px rgba(0,0,0,.08);
+    }
+
+    /* GARANTIA */
+
+    .guarantee {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 5px;
+    }
+
+    .guarantee img {
+      width: 75px;
+      height: auto;
+      display: block;
+    }
+
+    /* TOPO */
+
+    .badge {
+      display: block;
+      width: fit-content;
+      margin: 0 auto 5px;
+      padding: 4px 9px;
+      border-radius: 20px;
+      background: #e9f6ed;
+      color: #19753a;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 23px;
+      line-height: 1.08;
+      letter-spacing: -.5px;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #606961;
+      font-size: 12px;
+      line-height: 1.3;
+      margin-bottom: 9px;
+    }
+
+    /* O QUE VAI RECEBER */
+
+    .offer {
+      display: flex;
+      gap: 8px;
+      background: #f7faf7;
+      border: 1px solid #e3e9e4;
+      border-radius: 12px;
+      padding: 9px;
+      margin-bottom: 8px;
+    }
+
+    .offer-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .offer-title {
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .item {
+      display: flex;
+      align-items: flex-start;
+      gap: 5px;
+      font-size: 10px;
+      line-height: 1.2;
+      margin: 5px 0;
+    }
+
+    .check {
+      width: 16px;
+      height: 16px;
+      min-width: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #1d8a46;
+      color: white;
+      font-size: 9px;
+      font-weight: bold;
+    }
+
+    /* IMAGENS DOS MOCKUPS */
+
+    .product-images {
+      width: 105px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      justify-content: center;
+    }
+
+    .product-images img {
+      width: 100%;
+      height: 66px;
+      object-fit: contain;
+      display: block;
+      border-radius: 7px;
+      background: #fff;
+    }
+
+    /* PASSOS */
+
+    .steps {
+      display: flex;
+      justify-content: space-between;
+      margin: 6px 0 8px;
+    }
+
+    .step {
+      flex: 1;
+      text-align: center;
+      font-size: 9px;
+      color: #687169;
+    }
+
+    .number {
+      width: 19px;
+      height: 19px;
+      margin: 0 auto 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #edf2ee;
+      color: #18753a;
+      font-size: 9px;
+      font-weight: 800;
+    }
+
+    /* BOTÃO */
+
+   .cta {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: #e52323;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 15px;
+    padding: 14px;
+    border-radius: 12px;
+    
+    /* sombra inicial */
+    box-shadow: 0 5px 14px rgba(229, 35, 35, 0.35);
+
+    /* pulsação */
+    animation: pulsar 1.8s infinite;
+    
+    transition: transform 0.2s ease;
+}
+
+.cta:hover {
+    transform: scale(1.02);
+}
+
+.cta:active {
+    transform: scale(0.97);
+}
+
+@keyframes pulsar {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 5px 14px rgba(229, 35, 35, 0.35);
+    }
+
+    50% {
+        transform: scale(1.03);
+        box-shadow: 0 8px 24px rgba(229, 35, 35, 0.55);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 5px 14px rgba(229, 35, 35, 0.35);
+    }
+}
+    /* DEPOIMENTOS */
+
+    .social-proof {
+      margin-top: 7px;
+    }
+
+    .proof-title {
+      text-align: center;
+      font-size: 10px;
+      font-weight: 800;
+      color: #465149;
+      margin-bottom: 5px;
+    }
+.proof-scroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 2px 0 4px;
+
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+}
+
+.proof-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.proof-image {
+  flex: 0 0 165px;
+  height: 165px;
+
+  border-radius: 9px;
+  overflow: hidden;
+
+  border: 1px solid #e0e5e1;
+  background: #f8f8f8;
+
+  scroll-snap-align: center;
+
+  box-shadow: 0 2px 8px rgba(0,0,0,.10);
+}
+
+.proof-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  display: block;
+  background: #fff;
+}
+
+    /* PAGAMENTO */
+
+    .secure {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      margin-top: 5px;
+      font-size: 9px;
+      color: #858c87;
+    }
+
+    .secure img {
+      width: 48px;
+      height: auto;
+      display: block;
+    }
+
+    /* TELAS PEQUENAS */
+
+    @media (max-height: 650px) {
+
+      .page {
+        padding: 4px;
+      }
+
+      .card {
+        padding: 9px 11px 7px;
+      }
+
+      .guarantee img {
+        width: 60px;
+      }
+
+      h1 {
+        font-size: 20px;
+      }
+
+      .subtitle {
+        font-size: 10px;
+        margin-bottom: 6px;
+      }
+
+      .offer {
+        padding: 7px;
+        margin-bottom: 6px;
+      }
+
+      .offer-title {
+        font-size: 11px;
+      }
+
+      .item {
+        font-size: 9px;
+        margin: 3px 0;
+      }
+
+      .product-images {
+        width: 90px;
+      }
+
+      .product-images img {
+        height: 53px;
+      }
+
+      .steps {
+        margin: 4px 0 6px;
+      }
+
+      .cta {
+        padding: 11px;
+        font-size: 13px;
+      }
+
+      .proof-image {
+  flex: 0 0 155px;
+  height: 155px;
+}
+
+
+
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page">
+
+    <section class="card">
+
+      <!-- GARANTIA DE 7 DIAS -->
+
+      <div class="guarantee">
+        <img
+          src="3.png"
+          alt="Garantia de 7 dias"
+        >
+      </div>
+
+
+      <!-- TOPO -->
+
+      <span class="badge">
+        ✓ ACESSO DIGITAL
+      </span>
+
+      <h1>
+        Sua Receita Está Pronta
+      </h1>
+
+      <p class="subtitle">
+        Tenha acesso à receita completa QUE ESTICA E ENGROSSA O PAU EM ATÉ 20CM
+      </p>
+
+
+      <!-- O QUE VOCÊ VAI RECEBER -->
+
+      <div class="offer">
+
+        <div class="offer-content">
+
+          <div class="offer-title">
+            O QUE VOCÊ VAI RECEBER
+          </div>
+
+          <div class="item">
+            <span class="check">✓</span>
+            Receita completa passo a passo
+          </div>
+
+          <div class="item">
+            <span class="check">✓</span>
+            Lista dos ingredientes
+          </div>
+
+          <div class="item">
+            <span class="check">✓</span>
+            video aulas de preparação e de
+            Exercicios kegel
+            
+          </div>
+
+          <div class="item">
+            <span class="check">✓</span>
+            Orientações e suporte com a Dra. no 
+            Whatsapp
+          </div>
+
+        </div>
+
+
+        <!-- MOCKUP + RECEITA -->
+
+        <div class="product-images">
+
+          <img
+            src="1.png"
+            alt="Mockup da receita"
+            loading="lazy"
+          >
+
+          <img
+            src="2.png"
+            alt="Exemplo da receita"
+            loading="lazy"
+          >
+
+        </div>
+
+      </div>
+
+
+      <!-- COMO FUNCIONA -->
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="number">1</div>
+          Clique
+        </div>
+
+        <div class="step">
+          <div class="number">2</div>
+          Preencha
+        </div>
+
+        <div class="step">
+          <div class="number">3</div>
+          Pague
+        </div>
+
+        <div class="step">
+          <div class="number">4</div>
+          Receba
+        </div>
+
+      </div>
+
+
+      <!-- CTA -->
+
+<a href="SEU_LINK_DO_CHECKOUT" class="cta" id="checkoutBtn">
+    QUERO TER ACESSO À RECEITA →
+</a>
+
+
+      <!-- DEPOIMENTOS -->
+
+      <div class="social-proof">
+
+        <div class="proof-title">
+          💬 veja o que quem já recebeu a receita tem a dizer
+        </div>
+
+        <div class="proof-scroll">
+
+          <div class="proof-image">
+            <img
+              src="1p.png"
+              alt="Depoimento de cliente"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="proof-image">
+            <img
+              src="2p.png"
+              alt="Depoimento de cliente"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="proof-image">
+            <img
+              src="5p.png"
+              alt="Depoimento de cliente"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="proof-image">
+            <img
+              src="4p.png"
+              alt="Depoimento de cliente"
+              loading="lazy"
+            >
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- PAGAMENTO -->
+
+      <div class="secure">
+
+        🔒 Pagamento seguro
+
+        <img
+          src="4.png"
+          alt="Multicaixa"
+          loading="lazy"
+        >
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <script>
+
+    const checkoutBtn =
+      document.getElementById("checkoutBtn");
+
+    checkoutBtn.addEventListener("click", function () {
+
+      localStorage.setItem(
+        "precheckout_clicked",
+        new Date().toISOString()
+      );
+
+    });
+
+
+/* CARROSSEL AUTOMÁTICO DOS DEPOIMENTOS */
+
+const proofScroll =
+  document.querySelector(".proof-scroll");
+
+const proofImages =
+  document.querySelectorAll(".proof-image");
+
+let currentProof = 0;
+
+function nextProof() {
+
+  if (!proofImages.length) return;
+
+  currentProof++;
+
+  if (currentProof >= proofImages.length) {
+    currentProof = 0;
+  }
+
+  const image = proofImages[currentProof];
+
+  proofScroll.scrollTo({
+    left: image.offsetLeft - proofScroll.offsetLeft,
+    behavior: "smooth"
+  });
+
+}
+
+/* 4 segundos por depoimento */
+setInterval(nextProof, 4000);
+
+
+
+
+
+  </script>
+<!-- POPUP DE ABANDONO -->
+<div id="exitPopup" class="exit-overlay">
+
+  <div class="exit-popup">
+
+    <button class="exit-close" id="closePopup">×</button>
+
+    <div class="popup-icon">⚠️</div>
+
+    <h2>
+      ESPERE UM MOMENTO!
+    </h2>
+
+    <p class="popup-highlight">
+      Talvez esta seja a última esta oportunidade.
+    </p>
+
+    <p class="popup-text">
+      Nao perca a oportunidade de ter um Penis grande e grosso 
+      que realmente deixa ela satisfeita, esta oportunidade e unica se saires 
+      agora sem concluir o acesso da receita nao voltara a ver esta pagina.
+      Seu acesso pode ser concluído em poucos passos.
+    </p>
+
+    <a
+      href="SEU_LINK_DO_CHECKOUT"
+      class="popup-button"
+      id="popupCheckout"
+    >
+      CONTINUAR E TER ACESSO →
+    </a>
+
+    <button class="continue-leaving" id="leavePage">
+      Prefiro sair 
+    </button>
+
+  </div>
+
+</div>
+
+
+<style>
+
+/* FUNDO */
+
+.exit-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.72);
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  padding: 18px;
+
+  z-index: 999999;
+
+  animation: fadeIn .2s ease;
+}
+
+
+/* POPUP */
+
+.exit-popup {
+  position: relative;
+
+  width: 100%;
+  max-width: 380px;
+
+  background: #fff;
+
+  border-radius: 20px;
+
+  padding: 25px 20px 18px;
+
+  text-align: center;
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.30);
+
+  animation: popupIn .3s ease;
+}
+
+
+/* ÍCONE */
+
+.popup-icon {
+  font-size: 34px;
+  margin-bottom: 6px;
+}
+
+
+/* TÍTULO */
+
+.exit-popup h2 {
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 23px;
+
+  line-height: 1.1;
+
+  color: #171717;
+
+  margin-bottom: 9px;
+}
+
+
+/* DESTAQUE */
+
+.popup-highlight {
+  font-size: 16px;
+
+  font-weight: 800;
+
+  color: #d71919;
+
+  margin-bottom: 8px;
+}
+
+
+/* TEXTO */
+
+.popup-text {
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 14px;
+
+  line-height: 1.45;
+
+  color: #555;
+
+  margin-bottom: 17px;
+}
+
+
+/* BOTÃO */
+
+.popup-button {
+  display: block;
+
+  width: 100%;
+
+  padding: 14px 12px;
+
+  border-radius: 12px;
+
+  background: #e52323;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+  box-shadow:
+    0 6px 18px rgba(229,35,35,.35);
+
+  animation: buttonPulse 1.8s infinite;
+}
+
+
+/* FECHAR */
+
+.exit-close {
+  position: absolute;
+
+  top: 8px;
+  right: 10px;
+
+  width: 32px;
+  height: 32px;
+
+  border: none;
+
+  background: #f1f1f1;
+
+  border-radius: 50%;
+
+  font-size: 23px;
+
+  line-height: 32px;
+
+  color: #666;
+
+  cursor: pointer;
+}
+
+
+/* SAIR */
+
+.continue-leaving {
+  margin-top: 12px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #888;
+
+  font-size: 11px;
+
+  cursor: pointer;
+}
+
+
+/* ANIMAÇÕES */
+
+@keyframes fadeIn {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+@keyframes popupIn {
+
+  from {
+    opacity: 0;
+    transform: scale(.92) translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+
+}
+
+@keyframes buttonPulse {
+
+  0% {
+    transform: scale(1);
+
+    box-shadow:
+      0 6px 18px rgba(229,35,35,.35);
+  }
+
+  50% {
+    transform: scale(1.025);
+
+    box-shadow:
+      0 8px 25px rgba(229,35,35,.55);
+  }
+
+  100% {
+    transform: scale(1);
+
+    box-shadow:
+      0 6px 18px rgba(229,35,35,.35);
+  }
+
+}
+
+</style>
+
+
+<script>
+
+(function () {
+
+  const popup = document.getElementById("exitPopup");
+  const closeBtn = document.getElementById("closePopup");
+  const leaveBtn = document.getElementById("leavePage");
+  const popupCheckout = document.getElementById("popupCheckout");
+
+  /*
+   * Verifica se o popup já apareceu nesta sessão.
+   */
+
+  if (sessionStorage.getItem("exitPopupShown") === "1") {
+    return;
+  }
+
+
+  /*
+   * Detecta tentativa de voltar no Android/mobile.
+   */
+
+  history.pushState(null, "", location.href);
+
+  window.addEventListener("popstate", function () {
+
+    showPopup();
+
+    history.pushState(null, "", location.href);
+
+  });
+
+
+  /*
+   * Detecta tentativa de fechar/recarregar
+   * usando beforeunload.
+   *
+   * Alguns navegadores limitam esse tipo
+   * de popup, por isso o popstate é o principal.
+   */
+
+  let exitDetected = false;
+
+  document.addEventListener("mouseleave", function (event) {
+
+    if (
+      event.clientY <= 5 &&
+      window.innerWidth > 768 &&
+      !exitDetected
+    ) {
+
+      exitDetected = true;
+
+      showPopup();
+
+    }
+
+  });
+
+
+  function showPopup() {
+
+    if (
+      sessionStorage.getItem("exitPopupShown") === "1"
+    ) {
+      return;
+    }
+
+    sessionStorage.setItem(
+      "exitPopupShown",
+      "1"
+    );
+
+    popup.style.display = "flex";
+
+    document.body.style.overflow = "hidden";
+
+  }
+
+
+  function closePopupFunction() {
+
+    popup.style.display = "none";
+
+    document.body.style.overflow = "";
+
+  }
+
+
+  closeBtn.addEventListener(
+    "click",
+    closePopupFunction
+  );
+
+
+  leaveBtn.addEventListener(
+    "click",
+    closePopupFunction
+  );
+
+
+  /*
+   * Se clicar para continuar,
+   * registra que voltou ao checkout.
+   */
+
+  popupCheckout.addEventListener(
+    "click",
+    function () {
+
+      sessionStorage.setItem(
+        "checkoutFromPopup",
+        "1"
+      );
+
+    }
+  );
+
+
+})();
+
+</script>
+</body>
+</html>
